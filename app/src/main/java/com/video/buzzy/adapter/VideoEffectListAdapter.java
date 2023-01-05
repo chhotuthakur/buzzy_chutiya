@@ -1,0 +1,88 @@
+package com.video.buzzy.adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.video.buzzy.R;
+import com.video.buzzy.databinding.ItemVideoEffectBinding;
+import com.video.buzzy.effect.FilterType;
+import com.video.buzzy.util.Const;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class VideoEffectListAdapter extends RecyclerView.Adapter<VideoEffectListAdapter.PlaceViewHolder> {
+
+    List<FilterType> shaders;
+    VideoEffectAdapterListener listener;
+    ArrayList<String> filterThumbList = new ArrayList<>();
+    private Context context;
+    private int selectedEffect = 0;
+
+    public VideoEffectListAdapter(Context context, List<FilterType> shaders, VideoEffectAdapterListener listener) {
+        this.context = context;
+        this.listener = listener;
+        this.shaders = shaders;
+        filterThumbList = Const.listAssetFilterThumb(context);
+    }
+
+    @NonNull
+    @Override
+    public PlaceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+
+        View view;
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_video_effect,
+                parent, false);
+        return new PlaceViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull final PlaceViewHolder holder, final int position) {
+
+        holder.binding.ivSelectedEffect.setVisibility(View.GONE);
+
+        Glide.with(context).load(filterThumbList.get(position)).into(holder.binding.ivVideoEffect);
+
+        if (position == selectedEffect) {
+            holder.binding.ivSelectedEffect.setVisibility(View.VISIBLE);
+        }
+
+        holder.binding.tvEffectName.setText(shaders.get(position).name());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectedEffect = position;
+                listener.onVideoEffectSelected(shaders.get(position));
+                notifyDataSetChanged();
+            }
+        });
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return shaders.size();
+    }
+
+    public interface VideoEffectAdapterListener {
+        void onVideoEffectSelected(FilterType filterType);
+    }
+
+    class PlaceViewHolder extends RecyclerView.ViewHolder {
+
+        ItemVideoEffectBinding binding;
+
+        public PlaceViewHolder(View itemView) {
+            super(itemView);
+            binding = ItemVideoEffectBinding.bind(itemView);
+        }
+    }
+}

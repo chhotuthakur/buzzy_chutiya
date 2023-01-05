@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "975320072890",
+    "project_id": "buzzy-ab648",
+    "storage_bucket": "buzzy-ab648.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975320072890:android:5a67af60d3e25ef6e2b883",
+        "android_client_info": {
+          "package_name": "com.video.buzzy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975320072890-ekvuhjc6049osf2dfkn84rlq4cq7ltsf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVZpUsxlHEvZkoSZX_2UJ8bLGX8IHlvT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975320072890-ekvuhjc6049osf2dfkn84rlq4cq7ltsf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

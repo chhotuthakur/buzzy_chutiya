@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_color">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/thumbnail_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/player_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@color/transparent"
+                app:controller_layout_id="@layout/item_player_controler"
+                app:played_color="@color/transparent"
+                app:scrubber_color="@color/transparent"
+                app:show_timeout="1000"
+                app:shutter_background_color="@color/transparent"
+                app:surface_type="texture_view"
+                app:unplayed_color="@color/transparent">
+
+                <RelativeLayout
+                    android:id="@+id/rtl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent" />
+
+            </com.google.android.exoplayer2.ui.PlayerView>
+
+
+            <LinearLayout
+                android:id="@+id/profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="105dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <RelativeLayout
+                        android:id="@+id/profileLay"
+                        android:layout_width="50dp"
+                        android:layout_height="60dp">
+
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/white_strok">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                app:cardBackgroundColor="@color/searchbar_color"
+                                app:cardCornerRadius="15dp">
+
+                                <ImageView
+                                    android:id="@+id/thumbnail"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:adjustViewBounds="true"
+                                    android:background="@drawable/girl"
+                                    android:backgroundTint="@color/shimmarColor"
+                                    android:scaleType="centerCrop" />
+
+                            </androidx.cardview.widget.CardView>
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/light_blue_circle"
+                            android:src="@drawable/ic_baseline_add_24"
+                            app:tint="@color/white" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/username"
+                            android:layout_width="100dp"
+                            android:layout_height="12dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/shape_lightblue"
+                            android:backgroundTint="@color/shimmarColor"
+                            android:fontFamily="@font/montserratsemibold" />
+
+                        <TextView
+                            android:id="@+id/email"
+                            android:layout_width="100dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/shape_lightblue"
+                            android:backgroundTint="@color/shimmarColor" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/captionLay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2dp"
+                    android:background="@drawable/black_transpernt_squre">
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/bio"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:ellipsize="end"-->
+                    <!--                        android:fontFamily="@font/montserratmedium"-->
+                    <!--                        android:maxLines="3"-->
+                    <!--                        android:paddingHorizontal="10dp"-->
+                    <!--                        android:paddingVertical="10dp"-->
+                    <!--                        android:text="Don’t #giveup on your #dreams"-->
+                    <!--                        android:textColor="@color/white"-->
+                    <!--                        android:textSize="12sp" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/shape_lightblue"
+                            android:backgroundTint="@color/shimmarColor"
+                            android:fontFamily="@font/montserratmedium"
+                            android:maxLines="3"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            android:text="Don’t #giveup on your #dreams"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/shape_lightblue"
+                            android:backgroundTint="@color/shimmarColor"
+                            android:fontFamily="@font/montserratmedium"
+                            android:maxLines="3"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            android:text="Don’t #giveup on your #dreams"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="25sp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:padding="6dp"
+                        android:src="@drawable/music" />
+
+                    <TextView
+                        android:id="@+id/song_name"
+                        android:layout_width="100dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_lightblue"
+                        android:backgroundTint="@color/shimmarColor"
+                        android:fontFamily="@font/montserratmedium"
+                        android:padding="10dp"
+                        android:text="Hindi Lofi Songs To Study"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/chatLay"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/profile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/bg_round_pink"
+                android:backgroundTint="@color/shimmarColor">
+
+                <ImageView
+                    android:id="@+id/user_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+                <View
+                    android:id="@+id/online_view"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/shape_online"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/offline_view"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/shape_offline" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/chatName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/shape_lightblue"
+                    android:backgroundTint="@color/shimmarColor"
+                    android:fontFamily="@font/montserratregular" />
+
+
+                <TextView
+                    android:id="@+id/last_msg"
+                    android:layout_width="80dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_lightblue"
+                    android:backgroundTint="@color/shimmarColor"
+                    android:fontFamily="@font/montserratregular" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="50dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/shape_lightblue"
+                    android:backgroundTint="@color/shimmarColor"
+                    android:fontFamily="@font/montserratregular" />
+
+                <RelativeLayout
+                    android:id="@+id/msgLay"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:layout_marginEnd="2dp"
+                    android:background="@drawable/shape_pink_radius5"
+                    android:backgroundTint="@color/shimmarColor">
+
+                    <TextView
+                        android:id="@+id/pending_msg_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/montserratsemibold" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/chatLay"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/shimmarColor" />
+
+    </RelativeLayout>
+</layout>
